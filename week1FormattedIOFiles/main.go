@@ -26,5 +26,6 @@ func main() {
 		fmt.Println(wordsNumber, sizeOftheFile, fName)
 		sizeOftheFile = 0
 		wordsNumber = 0
+		fs.Close()
 	}
 }
