@@ -23,7 +23,7 @@ func main() {
 			sizeOftheFile += len(text)
 			wordsNumber += len(strings.Split(text, " "))
 		}
-		fmt.Println(wordsNumber, sizeOftheFile)
+		fmt.Println(wordsNumber, sizeOftheFile, fName)
 		sizeOftheFile = 0
 		wordsNumber = 0
 	}
