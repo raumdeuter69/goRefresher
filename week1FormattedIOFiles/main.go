@@ -11,7 +11,7 @@ import (
 func main() {
 
 	for _, fName := range os.Args[1:] {
-		var wordsNumber, sizeOftheFile int
+		var wordsNumber, sizeOftheFile, totalFiles, totalWords, totalSize int
 		fs, err := os.Open(fName)
 		if err != nil {
 			fmt.Println(err)
@@ -24,8 +24,14 @@ func main() {
 			wordsNumber += len(strings.Split(text, " "))
 		}
 		fmt.Println(wordsNumber, sizeOftheFile, fName)
+		totalWords += wordsNumber
+		totalSize += sizeOftheFile
 		sizeOftheFile = 0
 		wordsNumber = 0
 		fs.Close()
+		totalFiles += 1
+		if totalFiles > 1 {
+			fmt.Println(totalWords, totalSize, totalFiles)
+		}
 	}
 }
